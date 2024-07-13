@@ -48,7 +48,7 @@ contract FhockFhaperFhissors {
 
     function play(Choice playerChoice) public payable {
         require(msg.value != 0, "Need to pass a wager to play");
-        require(address(this).balance >= msg.value, "Insufficient pool balance");
+        require(address(this).balance >= (msg.value*2), "The casino is broke! Bet smaller plz");
 
         euint16 enumber = TFHE.randEuint16();
         Choice contractChoice = Choice(TFHE.decrypt(enumber) % 3);
@@ -58,8 +58,7 @@ contract FhockFhaperFhissors {
         uint256 owner_fee = msg.value * owner_fee_percent / 100;
 
         if (outcome == Outcome.PlayerWins) {
-            payout = msg.value*2 - owner_fee;
-            payable(msg.sender).transfer(payout);
+            payable(msg.sender).transfer(msg.value*2 - owner_fee);
         } else if (outcome == Outcome.Draw) {
             payable(msg.sender).transfer(msg.value - owner_fee);
         }

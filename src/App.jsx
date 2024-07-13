@@ -9,13 +9,6 @@ import { BrowserProvider } from "ethers";
 
 const contractABI = [
 	{
-		"inputs": [],
-		"name": "addToPool",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint32",
@@ -64,29 +57,10 @@ const contractABI = [
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "enum FhockFhaperFhissors.Choice",
-				"name": "playerChoice",
-				"type": "uint8"
-			}
-		],
-		"name": "play",
+		"inputs": [],
+		"name": "addToPool",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawFromPool",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -114,10 +88,36 @@ const contractABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum FhockFhaperFhissors.Choice",
+				"name": "playerChoice",
+				"type": "uint8"
+			}
+		],
+		"name": "play",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawFromPool",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	}
 ];
 
-const contractAddress = '0xfD128AC91f38feAa7FaCe7626f0D303A78b63f39'; // Replace with your actual contract address
+const contractAddress = '0x7d097aE4a4509AB263A24285B5F6f5801C0F745a'; // Replace with your actual contract address
 
 function App() {
   const [isInitialized, setIsInitialized] = useState(false);
