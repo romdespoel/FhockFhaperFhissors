@@ -64,19 +64,6 @@ const contractABI = [
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "generateRandomChoice",
-		"outputs": [
-			{
-				"internalType": "enum FhockFhaperFhissors.Choice",
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "enum FhockFhaperFhissors.Choice",
@@ -103,37 +90,13 @@ const contractABI = [
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "enum FhockFhaperFhissors.Choice",
-				"name": "playerChoice",
-				"type": "uint8"
-			},
-			{
-				"internalType": "enum FhockFhaperFhissors.Choice",
-				"name": "contractChoice",
-				"type": "uint8"
-			}
-		],
-		"name": "determineOutcome",
-		"outputs": [
-			{
-				"internalType": "enum FhockFhaperFhissors.Outcome",
-				"name": "",
-				"type": "uint8"
-			}
-		],
-		"stateMutability": "pure",
-		"type": "function"
-	},
-	{
 		"inputs": [],
-		"name": "last_choice",
+		"name": "owner",
 		"outputs": [
 			{
-				"internalType": "enum FhockFhaperFhissors.Choice",
+				"internalType": "address payable",
 				"name": "",
-				"type": "uint8"
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -154,7 +117,7 @@ const contractABI = [
 	}
 ];
 
-const contractAddress = '0x78ACf46a66c8F80cee25e95643c9c48Aae606536'; // Replace with your actual contract address
+const contractAddress = '0xfD128AC91f38feAa7FaCe7626f0D303A78b63f39'; // Replace with your actual contract address
 
 function App() {
   const [isInitialized, setIsInitialized] = useState(false);

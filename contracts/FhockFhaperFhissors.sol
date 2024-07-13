@@ -15,9 +15,8 @@ contract FhockFhaperFhissors {
         Draw
     }
 
-    address payable private owner;
+    address payable public owner;
     uint32 public owner_fee_percent;
-    Choice public last_choice;
 
     constructor(uint32 _owner_fee_percent) payable {
         owner = payable(msg.sender);
@@ -45,17 +44,12 @@ contract FhockFhaperFhissors {
         }
     }
 
-    function generateRandomChoice() public returns (Choice) {
-        euint16 enumber = TFHE.randEuint16();
-        last_choice = Choice(TFHE.decrypt(enumber) % 3);
-        return last_choice;
-    }
-
     function play(Choice playerChoice) public payable {
         require(msg.value != 0, "Need to pass a wager to play");
         require(address(this).balance >= msg.value, "Insufficient pool balance");
 
-        Choice contractChoice = generateRandomChoice();
+        euint16 enumber = TFHE.randEuint16();
+        Choice contractChoice = Choice(TFHE.decrypt(enumber) % 3);
         Outcome outcome = determineOutcome(playerChoice, contractChoice);
 
         uint256 payout = 0;
