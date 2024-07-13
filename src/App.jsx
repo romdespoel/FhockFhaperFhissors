@@ -204,6 +204,7 @@ function FhockFhaperFhissors({ account, provider }) {
   return (
     <div>
       <h1>Fhock Fhaper Fhissors</h1>
+	  <h2>Contract Address: {contractAddress}</h2>
       <Form className="Form-container">
         <Form.Group className="form-group">
           <Form.Label className="label">Choose your move: </Form.Label>
