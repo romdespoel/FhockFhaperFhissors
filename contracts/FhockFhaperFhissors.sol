@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
+// This contract plays a game of Rock, Paper, Scissors with the player. It takes the user's wager and has a pool
+// of funds that it uses to pay out the player's winnings. The contract owner can set a fee that is taken from the wager every round.
 pragma solidity ^0.8.20;
 
 import "fhevm@0.3.0/lib/TFHE.sol";
